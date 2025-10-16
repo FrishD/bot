@@ -1,0 +1,92 @@
+{
+    "ui": {
+        "thumbnail": "https://cdn.discordapp.com/attachments/1219984969896820747/1224348148747468972/Comp_1.gif?ex=661d2a11&is=660ab511&hm=85680a10555301f8f3fe910ad2c6fdb1e0d905baca184cbf53a38760e75e7851&",
+        "img": "",
+        "embedcolor": 5763719
+    },
+    "server": {
+        "member": [
+            1052669226047000576,
+            1418819921789456445
+        ],
+        "verifychannel": 1113566909674295336,
+        "playerlist": 1112286613217755216,
+        "staff": 1128143033431511081
+    },
+    "categories": {
+        "DM - תרומה": 1124971444737159209,
+        "DM - תלונה על שחקן": 1128678955277352980,
+        "DM - שאלה / אחר": 1128662384131706991,
+        "DM - בירור": 1234633394122395699,
+        "DM - ערעור על באן": 1128662206486159380
+    },
+    "roleplaycategiries": {
+    },
+    "logs": {
+        "ticket": {
+            "open": 1128652575093305425,
+            "close": 1128652575093305425,
+            "trans": 1128658981234163742,
+            "claim": 1128652521620111360,
+            "general": 1128652575093305425
+        }
+    },
+    "tickets": {
+        "inquiry_role_id": 1052668934307975198,
+        "clear": 1212043774352564304,
+        "opened": {
+            "format": false,
+            "messageopen": "פתחתי לך טיקט ב ",
+            "description": "תמתין בבקשה עד שהצוות יפנו אליך",
+            "footertext": "HydraDM"
+        },
+        "roleplayserverrole":"1159495729853763584",
+        "dmserverrole": "1159945564927049830",
+        "placeholder": "תבחר סיבה לטיקט שלך",
+        "serverplaceholder": "תבחר את השרת שנוגע לטיקט",
+        "emojis": {
+            "תרומה": null,
+            "שאלה / אחר": null,
+            "תלונה על שחקן": null,
+            "פתיחת גאנג": null,
+            "ערעור על באן": null
+        },
+        "descriptions": {
+        },
+        "reasons": [
+            "DM - תרומה",
+            "DM - שאלה / אחר",
+            "DM - תלונה על שחקן",
+            "DM - בירור",
+            "DM - ערעור על באן"
+        ],
+        "serveremojis": {
+            "Hydra DM": null,
+            "Hydra RolePlay": null
+        },
+        "serverdescriptions": {
+            "Hydra DM": null,
+            "Hydra RolePlay": null
+        },
+        "serverreasons": [
+            "Hydra DM",
+            "Hydra RolePlay"
+        ],
+        "openchannel": 1418819477885423728,
+        "open": {
+            "button": "פתח טיקט 🎫",
+            "embedselect": {
+                "title": "פתיחת טיקט 🎫",
+                "description": "תבחר את הסיבה של הטיקט שלך"
+            },
+            "serverembedselect": {
+                "title": "פתיחת טיקט 🎫",
+                "description": "תבחר את השרת שנוגע לטיקט"
+            },
+            "title": "פתיחת טיקט 🎫",
+            "description": "**לחץ על הכפתור למטה כדי לפתוח טיקט** \n **לאחר מכן בחר את הסיבה הרצויה**",
+            "color": 3447003,
+            "footer": "HydraDM"
+        }
+    }
+}

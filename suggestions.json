@@ -1,0 +1,794 @@
+[
+    {
+        "id": 1,
+        "content": "dsad",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:32:07",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 2,
+        "content": "\u05e9\u05d3\u05d2",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:32:40",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 3,
+        "content": "\u05e9\u05d3\u05d2\u05e9\u05d3\u05d2",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:33:34",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 4,
+        "content": "\u05d2\u05d3\u05e9",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:33:39",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 5,
+        "content": "\u05d3\u05e9\u05d2",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:34:08",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 6,
+        "content": "\u05e9\u05d3\u05d2\u05e9\u05d3\u05d2",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:34:47",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 7,
+        "content": "\u05e9\u05d3\u05d2\u05d3\u05e9\u05d2\u05e9\u05d3",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-21 13:36:18",
+        "upvotes": 1,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 8,
+        "content": "50$ gift https://steanmecomrmunity.com/102591063",
+        "author_id": 1325314978600718337,
+        "timestamp": "2025-03-21 14:14:41",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 9,
+        "content": "\u05de",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-03-23 12:00:58",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 10,
+        "content": "\u05dc\u05d4\u05e2\u05d9\u05e3 \u05d0\u05ea \u05d4 220 \u05db\u05d3\u05d5\u05e8\u05d9\u05dd",
+        "author_id": 787428734251827251,
+        "timestamp": "2025-03-23 15:39:10",
+        "upvotes": 39,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 11,
+        "content": "\u05e8\u05d9\u05e7\u05d5\u05d9\u05d9\u05dc \u05e9\u05dc \u05e4\u05e2\u05dd \u05d7\u05d9\u05d9\u05d1",
+        "author_id": 1231717064352337950,
+        "timestamp": "2025-03-23 15:39:32",
+        "upvotes": 16,
+        "downvotes": 9,
+        "status": "pending"
+    },
+    {
+        "id": 12,
+        "content": "\u05e8\u05d9\u05e7\u05d5\u05d9\u05d9\u05dc \u05dc\u05d4\u05d5\u05e8\u05d9\u05d3",
+        "author_id": 1107239942318473296,
+        "timestamp": "2025-03-23 15:39:50",
+        "upvotes": 30,
+        "downvotes": 8,
+        "status": "pending"
+    },
+    {
+        "id": 13,
+        "content": "\u05d0\u05d9\u05e4\u05d5\u05e1 \u05d1\u05d0\u05e0\u05d9\u05dd",
+        "author_id": 1061252609803038791,
+        "timestamp": "2025-03-23 15:46:12",
+        "upvotes": 18,
+        "downvotes": 7,
+        "status": "pending"
+    },
+    {
+        "id": 14,
+        "content": "\u05dc\u05d4\u05d5\u05e6\u05d9\u05d0 \u05d0\u05ea \u05d4\u05d2\u05d0\u05df \u05d2\u05d9\u05d9\u05dd",
+        "author_id": 1349748229025173564,
+        "timestamp": "2025-03-23 15:52:19",
+        "upvotes": 10,
+        "downvotes": 7,
+        "status": "pending"
+    },
+    {
+        "id": 15,
+        "content": "\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc \u05d7\u05d1\u05e8\u05d4 \u05e9\u05dc\u05da \u05de\u05ea\u05e7\u05dc\u05d7\u05ea",
+        "author_id": 789072874144792576,
+        "timestamp": "2025-03-23 16:14:25",
+        "upvotes": 1,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 16,
+        "content": "\u05d0\u05e0\u05d8\u05d9 \u05e6\u05d9\u05d8 \u05d0\u05de\u05d9\u05ea\u05d9",
+        "author_id": 1268160069468688498,
+        "timestamp": "2025-03-23 16:35:14",
+        "upvotes": 14,
+        "downvotes": 5,
+        "status": "pending"
+    },
+    {
+        "id": 17,
+        "content": "<@571017358655619092> plz",
+        "author_id": 854665294408581122,
+        "timestamp": "2025-03-23 16:59:55",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 18,
+        "content": "\u05dc\u05d4\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e4\u05d3 hydralegendv2",
+        "author_id": 545306175143673856,
+        "timestamp": "2025-03-24 19:54:59",
+        "upvotes": 1,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 19,
+        "content": "\u05de\u05d0\u05e7\u05d8\u05df \u05d9\u05e9\u05df",
+        "author_id": 822897958084804609,
+        "timestamp": "2025-03-26 16:19:08",
+        "upvotes": 10,
+        "downvotes": 7,
+        "status": "pending"
+    },
+    {
+        "id": 20,
+        "content": "50$ gift https://u.to/EOQ0Ig",
+        "author_id": 1031524661982400562,
+        "timestamp": "2025-03-27 15:11:00",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 21,
+        "content": "50$ gift - [steamcommunity.com/gift/8543091958](https://u.to/oe00Ig)",
+        "author_id": 881814258231435284,
+        "timestamp": "2025-03-27 15:50:56",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 22,
+        "content": "\u05d3\u05e8\u05d5\u05e4\u05d9\u05dd \u05e4\u05e2\u05dd \u05d1\u05db\u05de\u05d4 \u05d6\u05de\u05df \u05d4\u05d3\u05e8\u05d5\u05e4\u05d9\u05db\u05d5\u05dc \u05dc\u05d4\u05d1\u05d9\u05d0 10 \u05e0\u05de\u05d9\u05dc\u05d9\u05d5\u05df \u05d0\u05d5 \u05e0\u05d9\u05d9\u05dd \u05d8\u05d0\u05d2",
+        "author_id": 1173667000325779529,
+        "timestamp": "2025-03-28 16:23:54",
+        "upvotes": 7,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 23,
+        "content": "50$ gift - [steamcommunity.com/gift/93767855](https://u.to/lqk1Ig) @everyone",
+        "author_id": 568334169864667146,
+        "timestamp": "2025-03-28 21:17:51",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 24,
+        "content": "@everyone steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://in.mt/i6h )",
+        "author_id": 1279833526061105205,
+        "timestamp": "2025-03-28 21:18:30",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 25,
+        "content": "50$ gift - [steamcommunity.com/gift/activation/id=15611433055](https://u.to/Wqg1Ig)",
+        "author_id": 852522455913725984,
+        "timestamp": "2025-03-28 21:35:44",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 26,
+        "content": "\u05dc\u05e2\u05e9\u05d5\u05ea \u05e2\u05d5\u05d3 /playtime",
+        "author_id": 1351915327348539413,
+        "timestamp": "2025-03-28 23:26:17",
+        "upvotes": 8,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 27,
+        "content": "\u05dc\u05e1\u05d3\u05e8 \u05ea\u05d1\u05d0\u05d2 \u05e8\u05d0\u05e9 \u05de\u05d4\u05d8\u05d5\u05e8\u05e3 \u05d4\u05d6\u05d4 \u05d0\u05e0\u05d9 \u05e4\u05d5\u05d2\u05e2 \u05d1\u05de\u05d9\u05e9\u05d4\u05d5 9 \u05d4\u05d3\u05e9\u05d5\u05d8\u05d9\u05dd \u05d5\u05d4\u05d5\u05d0 \u05dc\u05d0 \u05de\u05ea",
+        "author_id": 867026722607464499,
+        "timestamp": "2025-03-29 08:57:41",
+        "upvotes": 13,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 28,
+        "content": "\u05d0\u05d9\u05e4\u05d5\u05e1 \u05d1\u05d0\u05e0\u05d9\u05dd",
+        "author_id": 1333897330235277358,
+        "timestamp": "2025-03-29 16:17:35",
+        "upvotes": 13,
+        "downvotes": 6,
+        "status": "pending"
+    },
+    {
+        "id": 29,
+        "content": "\u05d3\u05d5\u05d9\u05d3 \u05d4\u05d1\u05d5\u05d3\u05e7 \u05e6\u05d9\u05d8\u05e8",
+        "author_id": 1055451880144252948,
+        "timestamp": "2025-03-31 07:06:40",
+        "upvotes": 2,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 30,
+        "content": "50$ gift - [steamcommunity.com/gift/937679556](https://u.to/GsE2Ig) @everyone",
+        "author_id": 1353445529886916720,
+        "timestamp": "2025-03-31 08:42:27",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 31,
+        "content": "\u05dc\u05d4\u05d5\u05e8\u05d9\u05d3 \u05de\u05d7\u05d9\u05e8 \u05e9\u05dc \u05d0\u05df \u05d1\u05d0\u05e0\u05d9\u05dd (\u05dc\u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05dc \u05e6\u05d9\u05d8\u05d9\u05dd \u05d5\u05db\u05dc \u05d6\u05d4 (\u05d0\u05e0\u05d9 \u05dc\u05d0 \u05d1\u05d1\u05d0\u05df",
+        "author_id": 1080903693169328279,
+        "timestamp": "2025-04-02 12:30:45",
+        "upvotes": 4,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 32,
+        "content": "50$ gift - [steamcommunity.com/gift/937679556](https://u.to/9TI3Ig) @everyone",
+        "author_id": 727486614036807680,
+        "timestamp": "2025-04-02 14:33:45",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 33,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05e7\u05e9\u05e8 \u05dc\u05dc\u05d0\u05d5\u05d3\u05d0\u05d5\u05d8 \u05e9\u05dc \u05d4\u05e0\u05e9\u05e7\u05d9\u05dd",
+        "author_id": 822897958084804609,
+        "timestamp": "2025-04-02 15:15:08",
+        "upvotes": 3,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 34,
+        "content": "kj",
+        "author_id": 1080903693169328279,
+        "timestamp": "2025-04-03 15:30:52",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 35,
+        "content": "\u05e9\u05dd \u05db\u05e1\u05e3 \u05d4- X \u05d6\u05d4 \u05d0\u05dc\u05d8\u05d9\u05dd \u05e9\u05dc \u05e9\u05d9",
+        "author_id": 1286015142307565589,
+        "timestamp": "2025-04-03 16:44:51",
+        "upvotes": 1,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 36,
+        "content": "50$ gift https://steamegift.cfd/1053995019",
+        "author_id": 1230187298981679286,
+        "timestamp": "2025-04-03 20:15:50",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 37,
+        "content": "\u05e8\u05d9\u05e7\u05d5\u05d9\u05d9\u05dc \u05e9\u05dc \u05e4\u05e2\u05dd \u05d5\u05d0\u05e0\u05e9\u05d9\u05dd \u05e4\u05d4 \u05de\u05d0\u05d5\u05e9\u05e8\u05d9\u05dd",
+        "author_id": 1278314736513060926,
+        "timestamp": "2025-04-03 21:15:54",
+        "upvotes": 9,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 38,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05d3\u05d9\u05d2\u05dc \u05e7\u05d0\u05e1\u05d8\u05d5\u05dd",
+        "author_id": 822897958084804609,
+        "timestamp": "2025-04-04 05:58:23",
+        "upvotes": 6,
+        "downvotes": 7,
+        "status": "pending"
+    },
+    {
+        "id": 39,
+        "content": "@everyone steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://u.to/8a83Ig )",
+        "author_id": 1297540918316109875,
+        "timestamp": "2025-04-04 14:04:59",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 40,
+        "content": "@everyone steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://u.to/ErY3Ig )",
+        "author_id": 828690407792705576,
+        "timestamp": "2025-04-04 16:33:16",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 41,
+        "content": "\u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05e2\u05e9\u05d5\u05ea \u05d4\u05e0\u05d7\u05d5\u05ea \u05d1\u05d7\u05e0\u05d5\u05ea \u05e9\u05dc \u05d4\u05e9\u05e8\u05ea",
+        "author_id": 822897958084804609,
+        "timestamp": "2025-04-04 18:43:34",
+        "upvotes": 13,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 42,
+        "content": "\u05dc\u05d4\u05d5\u05e8\u05d9\u05d3 \u05ea\u05d6\u05de\u05df \u05e9\u05dc \u05d4\u05e7\u05d5\u05dc\u05d3\u05d0\u05d5\u05df \u05e9\u05dc \u05d4\u05e9\u05d5\u05d3\u05d9\u05dd",
+        "author_id": 505677711507980289,
+        "timestamp": "2025-04-04 18:52:31",
+        "upvotes": 13,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 43,
+        "content": "11111111111111111111",
+        "author_id": 1344176839832244236,
+        "timestamp": "2025-04-04 20:52:50",
+        "upvotes": 0,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 44,
+        "content": "<@794287061670166588>",
+        "author_id": 867026722607464499,
+        "timestamp": "2025-04-05 15:47:22",
+        "upvotes": 0,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 45,
+        "content": "\u05dc\u05e2\u05dc\u05d5\u05ea \u05d0\u05ea \u05d4\u05e1\u05dc\u05d5\u05d8\u05d9\u05dd \u05d0\u05dc 120",
+        "author_id": 1231326097291874324,
+        "timestamp": "2025-04-05 18:54:24",
+        "upvotes": 7,
+        "downvotes": 6,
+        "status": "pending"
+    },
+    {
+        "id": 46,
+        "content": "@everyone steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://is.gd/SyaIjz )",
+        "author_id": 799657224704229436,
+        "timestamp": "2025-04-07 11:24:18",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 47,
+        "content": "\u05d0\u05df \u05d1\u05d0\u05df \u05d5\u05d5\u05d9\u05e4",
+        "author_id": 1061252609803038791,
+        "timestamp": "2025-04-12 14:27:57",
+        "upvotes": 27,
+        "downvotes": 12,
+        "status": "pending"
+    },
+    {
+        "id": 48,
+        "content": "\u05dc\u05e2\u05dc\u05d5\u05ea \u05d0\u05ea \u05d4\u05db\u05e1\u05e3 \u05e9\u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05d1\u05e9\u05d5\u05d3\u05d9\u05dd",
+        "author_id": 764471640372543528,
+        "timestamp": "2025-04-12 14:28:25",
+        "upvotes": 29,
+        "downvotes": 4,
+        "status": "pending"
+    },
+    {
+        "id": 49,
+        "content": "\u05dc\u05d5\u05e1\u05d9\u05e3 specialcarbine \u2705",
+        "author_id": 1210348712631730179,
+        "timestamp": "2025-04-12 14:28:54",
+        "upvotes": 6,
+        "downvotes": 20,
+        "status": "pending"
+    },
+    {
+        "id": 50,
+        "content": "HASDFGJKL",
+        "author_id": 716331641387090022,
+        "timestamp": "2025-04-12 14:28:58",
+        "upvotes": 1,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 51,
+        "content": "\u05d4\u05d5\u05e8\u05d3\u05ea \u05d5\u05d5\u05d9\u05d2\u05e8 \u05d1\u05dc\u05d0\u05e7\u05dc\u05d9\u05e1\u05d8",
+        "author_id": 1114562567696814110,
+        "timestamp": "2025-04-12 14:30:13",
+        "upvotes": 20,
+        "downvotes": 11,
+        "status": "pending"
+    },
+    {
+        "id": 52,
+        "content": "\u05dc\u05d4\u05e2\u05d9\u05e3 \u05d0\u05ea \u05e8\u05d5\u05de\u05d6\u05d9 \u05de\u05e6\u05d5\u05d5\u05ea",
+        "author_id": 1018947564109832323,
+        "timestamp": "2025-04-12 14:32:33",
+        "upvotes": 3,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 53,
+        "content": "\u05dc",
+        "author_id": 875386122807697488,
+        "timestamp": "2025-04-12 14:32:43",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 54,
+        "content": "\u05d1\u05d0\u05df \u05d5\u05d5\u05d9\u05e4",
+        "author_id": 694649414110937139,
+        "timestamp": "2025-04-12 15:22:03",
+        "upvotes": 22,
+        "downvotes": 6,
+        "status": "pending"
+    },
+    {
+        "id": 55,
+        "content": "!approve 54",
+        "author_id": 1349858607633666050,
+        "timestamp": "2025-04-12 15:56:39",
+        "upvotes": 1,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 56,
+        "content": "\u05dc\u05e2\u05e9\u05d5\u05ea \u05d1\u05e9\u05d5\u05d3 \u05d1\u05e0\u05e7 \u05e9\u05d4\u05db\u05e1\u05e4\u05ea \u05e0\u05e4\u05ea\u05d7\u05ea \u05d5\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05dd",
+        "author_id": 1205914298719932427,
+        "timestamp": "2025-04-12 19:51:00",
+        "upvotes": 7,
+        "downvotes": 3,
+        "status": "pending"
+    },
+    {
+        "id": 57,
+        "content": "\u05d0\u05d9\u05e4\u05d5\u05e1 \u05d1\u05d0\u05e0\u05d9\u05dd, \u05dc\u05ea\u05ea \u05d4\u05d6\u05d3\u05de\u05e0\u05d5\u05ea \u05e9\u05e0\u05d9\u05d4 \u05dc\u05db\u05d1\u05d5\u05d3 \u05d4\u05d7\u05d2",
+        "author_id": 1305815284329877556,
+        "timestamp": "2025-04-12 21:57:08",
+        "upvotes": 23,
+        "downvotes": 11,
+        "status": "pending"
+    },
+    {
+        "id": 58,
+        "content": "withdrew $15788 from the site using promo crazyspin\nhttps://betocas.com/auth/register?promo=crazyspin",
+        "author_id": 690905668722622495,
+        "timestamp": "2025-04-13 07:01:35",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 59,
+        "content": "\u05e4\u05e8\u05d9\u05e7\u05ea \u05e1\u05e4\u05d0\u05d5\u05df \u05dc\u05e6\u05d3 \u05d9\u05de\u05d9\u05df",
+        "author_id": 875412640451665930,
+        "timestamp": "2025-04-13 16:04:51",
+        "upvotes": 5,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 60,
+        "content": "d",
+        "author_id": 1354524545297678558,
+        "timestamp": "2025-04-13 17:31:29",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 61,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05db\u05d1\u05e8 \u05d0\u05e0\u05d8\u05d9\u05e6\u05d9\u05d8 \u05d9\u05d5\u05ea\u05e8 \u05d8\u05d5\u05d1",
+        "author_id": 1354524545297678558,
+        "timestamp": "2025-04-13 18:59:34",
+        "upvotes": 6,
+        "downvotes": 5,
+        "status": "pending"
+    },
+    {
+        "id": 62,
+        "content": "\u05dc\u05d4\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d2\u05d0\u05e0\u05d2\u05d9\u05dd",
+        "author_id": 822897958084804609,
+        "timestamp": "2025-04-13 19:07:56",
+        "upvotes": 10,
+        "downvotes": 10,
+        "status": "pending"
+    },
+    {
+        "id": 63,
+        "content": "<@481058017660370964>",
+        "author_id": 1308961045200502857,
+        "timestamp": "2025-04-15 10:01:06",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 64,
+        "content": "\u05dc\u05e1\u05d3\u05e8 \u05d0\u05ea \u05d4\u05de\u05d5\u05d1\u05de\u05e0\u05d8",
+        "author_id": 1158147537505615882,
+        "timestamp": "2025-04-15 13:27:26",
+        "upvotes": 7,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 65,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05e7\u05e9\u05e8 \u05dc\u05e9\u05e8\u05ea",
+        "author_id": 800386867098026014,
+        "timestamp": "2025-04-15 18:33:02",
+        "upvotes": 6,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 66,
+        "content": "\u05dc\u05e4\u05ea\u05d5\u05d7 \u05d7\u05d3\u05e8 \u05e9\u05d0\u05e0\u05e9\u05d9\u05dd \u05d9\u05db\u05d5\u05dc\u05d9\u05dd \u05dc\u05e9\u05dc\u05d5\u05d7 \u05d0\u05ea \u05d4hud \u05e9\u05dc\u05d4\u05dd",
+        "author_id": 717810619205812277,
+        "timestamp": "2025-04-15 22:40:30",
+        "upvotes": 3,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 67,
+        "content": "\u05d9\u05e9 \u05db\u05d1\u05e8",
+        "author_id": 1355452056554438707,
+        "timestamp": "2025-04-15 22:49:11",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 68,
+        "content": "\u05e0\u05db\u05d5\u05df \u05d4\u05e1\u05d9\u05de\u05d5\u05df \u05e9\u05de\u05e1\u05de\u05e0\u05d9\u05dd \u05e9\u05d0\u05ea\u05d4 \u05e2\u05dd \u05d7\u05d1\u05e8\u05d9\u05dd \u05e9\u05dc\u05da \u05d1\u05d8\u05d9\u05dd ? \u05d0\u05d6 \u05e9\u05d0\u05ea\u05d4 \u05de\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05e1\u05d9\u05de\u05d5\u05df \u05d4\u05d5\u05d5\u05e8\u05d5\u05d3 \u05d4\u05d6\u05d4 \u05e9\u05d4\u05d5\u05d0 \u05d9\u05d4\u05d9\u05d4 \u05d9\u05d5\u05ea\u05e8 \u05e7\u05d8\u05df \u05d5\u05e4\u05d7\u05d5\u05ea \u05de\u05e1\u05ea\u05d9\u05e8",
+        "author_id": 517338053753176095,
+        "timestamp": "2025-04-16 21:03:12",
+        "upvotes": 12,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 69,
+        "content": "1",
+        "author_id": 707104375784341566,
+        "timestamp": "2025-04-17 02:47:49",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 70,
+        "content": "\u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05e2\u05e9\u05d5\u05ea \u05d4\u05e0\u05d7\u05d5\u05ea \u05d1\u05d7\u05e0\u05d5\u05ea",
+        "author_id": 1355452056554438707,
+        "timestamp": "2025-04-17 09:38:46",
+        "upvotes": 11,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 71,
+        "content": "Gift 50$ - [steamcommuniuty.com/gift-card/149831232041](https://tinyurl.com/yedus8ek) @everyone",
+        "author_id": 1343143285333688423,
+        "timestamp": "2025-04-17 15:51:52",
+        "upvotes": 0,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 72,
+        "content": "50$ gift https://steamcommrunity.cfd/105043918",
+        "author_id": 919224383145377842,
+        "timestamp": "2025-04-18 19:43:12",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 73,
+        "content": "50$ gift https://steamcommrunity.cfd/105043918",
+        "author_id": 722773224206762065,
+        "timestamp": "2025-04-18 19:54:20",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 74,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 MP5 , \u05dc\u05d0 \u05d4\u05d2\u05d9\u05d5\u05e0\u05d9 \u05e9\u05db\u05dc \u05d4\u05e9\u05e8\u05ea \u05d0\u05d5 \u05e2\u05dd \u05de\u05d0\u05e7\u05d8\u05df \u05d0\u05d5 \u05e2\u05dd \u05d3\u05d9\u05d2\u05dc \u05d5\u05d6\u05d4 \u05d2\u05dd \u05d0\u05d5\u05e4\u05e6\u05d9\u05d5\u05e0\u05dc\u05d9.",
+        "author_id": 800386867098026014,
+        "timestamp": "2025-04-19 01:04:27",
+        "upvotes": 16,
+        "downvotes": 9,
+        "status": "pending"
+    },
+    {
+        "id": 75,
+        "content": "1",
+        "author_id": 898641130516783145,
+        "timestamp": "2025-04-19 16:54:35",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 76,
+        "content": "<@1131632144737894541>",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-04-19 17:25:00",
+        "upvotes": 0,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 77,
+        "content": "Gift 50$ - [steamcommunity.com/gift-card/839930534000](https://tinyurl.com/4jnp7rpx) @everyone",
+        "author_id": 1243635604688867349,
+        "timestamp": "2025-04-22 12:40:19",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 78,
+        "content": "1 \u00af\\_(\u30c4)_/\u00af",
+        "author_id": 1074671581697146901,
+        "timestamp": "2025-04-23 19:04:06",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 79,
+        "content": "steam gives a personal gift - [steamcommunity.com/id=1131341079](https://u.to/jkE7Ig) @everyone",
+        "author_id": 1349728386733572126,
+        "timestamp": "2025-04-25 07:35:11",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 80,
+        "content": "50$ gift https://e.vg/RrgprmTXf",
+        "author_id": 1163077427916976168,
+        "timestamp": "2025-04-25 20:17:40",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 81,
+        "content": "\u05dc\u05d4\u05d5\u05e6\u05d9\u05d0 \u05d0\u05d8 \u05e8\u05d5\u05de\u05d6\u05d9 \u05de\u05e6\u05d5\u05d5\u05d8",
+        "author_id": 716331641387090022,
+        "timestamp": "2025-04-26 12:34:12",
+        "upvotes": 1,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 82,
+        "content": "\u05dc\u05d4\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05db\u05ea \u05e1\u05e7\u05d5\u05d0\u05d3\u05d9\u05dd \u05dc\u05de\u05e2\u05e8\u05db\u05ea \u05e1\u05e7\u05d5\u05d0\u05d3\u05d9\u05dd \u05d0\u05d7\u05e8\u05ea",
+        "author_id": 794507698346524702,
+        "timestamp": "2025-04-27 21:36:35",
+        "upvotes": 7,
+        "downvotes": 1,
+        "status": "pending"
+    },
+    {
+        "id": 83,
+        "content": "1",
+        "author_id": 808751296676364320,
+        "timestamp": "2025-04-28 03:16:09",
+        "upvotes": 1,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 84,
+        "content": "\u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 Freedom \u05db\u05de\u05d5 \u05d1\u05e4\u05d9\u05d5\u05e6\u05e8 \u05d3\u05d9\u05d0\u05dd",
+        "author_id": 1352544442787172415,
+        "timestamp": "2025-04-28 05:38:34",
+        "upvotes": 3,
+        "downvotes": 5,
+        "status": "pending"
+    },
+    {
+        "id": 85,
+        "content": "dsadsa",
+        "author_id": 571017358655619092,
+        "timestamp": "2025-05-01 19:35:13",
+        "upvotes": 0,
+        "downvotes": 0,
+        "status": "pending"
+    },
+    {
+        "id": 86,
+        "content": "/\u200fsuggeitsen",
+        "author_id": 1000474873900040303,
+        "timestamp": "2025-05-02 11:55:09",
+        "upvotes": 0,
+        "downvotes": 2,
+        "status": "pending"
+    },
+    {
+        "id": 87,
+        "content": "\u200f\u05d0\u05e0\u05d9 \u05de\u05de\u05dc\u05d9\u05e5 \u05dc\u05e9\u05e8\u05ea \u05dc\u05e2\u05e9\u05d5\u05ea \u05db\u05de\u05d5 \u05e4\u05d9\u05d5\u05e6\u05e8 DM \u05dc\u05e2\u05e9\u05d5\u05ea \u05e9\u05dc \u05db\u05de\u05d4 \u05de\u05e9\u05d7\u05e7\u05d9\u05dd \u05e9\u05dc \u05e8\u05de\u05d0\u05d5\u05ea \u05e9\u05dc \u05db\u05de\u05d4 \u05de\u05d5\u05dc \u05db\u05de\u05d4 \u05d1\u05e8\u05de\u05e4\u05d4 \u05d0\u05d7\u05ea \u05e9\u05dc \u05db\u05de\u05d4 \u05e8\u05de\u05e4\u05d5\u05ea  \u05e9\u05db\u05d5\u05dc\u05dd \u05e0\u05d2\u05d9\u05d3 \u05db\u05d5\u05dc\u05dd \u05dc\u05e2\u05e9\u05d5\u05ea \u05e0\u05e9\u05e7\u05d9\u05dd \u05e8\u05e0\u05d3\u05d5\u05de\u05dc\u05d9\u05dd \u05d1\u05e7\u05d9\u05e6\u05d5\u05e8 \u05db\u05de\u05d5 \u05e4\u05d9\u05d5\u05e6\u05e8 DM \u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8 \u05e8\u05e7 \u05e2\u05dd \u05d4\u05e1\u05de\u05dc \u05e9\u05dc \u05d4\u05e0\u05d3\u05e8\u05d9\u05dd \u05e9\u05dc \u05d4\u05d9\u05d3 \u05d0\u05e0\u05d9 \u05d7\u05d5\u05e9\u05d1 \u05e9\u05d6\u05d4 \u05d9\u05e6\u05dc\u05d9\u05d7 \u05e9\u05d6\u05d4 \u05d9\u05d1\u05d9\u05d0 \u05d4\u05e8\u05d1\u05d4 \u05d0\u05e0\u05e9\u05d9\u05dd \u05d5\u05d6\u05d4\u05d5 \u05d5\u05e9\u05d9 \u05e9\u05d9\u05de\u05d5 XP \u05e9\u05d9\u05d4\u05d9\u05d4 \u05de\u05e7\u05d5\u05dd \u05e9\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05de\u05d9\u05e8 \u05d0\u05d5\u05ea\u05d5 \u05dc\u05db\u05e1\u05e3 \u05d1\u05e9\u05e8\u05ea \u05d5\u05db\u05db\u05d4 \u05dc\u05e7\u05e0\u05d5\u05ea \u05d3\u05d1\u05e8\u05d9\u05dd \u05d0\u05e0\u05d9 \u05d7\u05d5\u05e9\u05d1 \u05db\u05db\u05d4 \u05de\u05de\u05dc\u05d9\u05e5 \u05dc\u05db\u05dd \u05dc\u05e2\u05e9\u05d5\u05ea",
+        "author_id": 1000474873900040303,
+        "timestamp": "2025-05-02 12:39:58",
+        "upvotes": 4,
+        "downvotes": 4,
+        "status": "pending"
+    },
+    {
+        "id": 88,
+        "content": "\u05dc\u05d4\u05db\u05e0\u05d9\u05e1 RAM7 \u05d5\u05db\u05dc \u05d4\u05e0\u05e9\u05e7\u05d9\u05dd \u05e9\u05d9\u05e9 \u05d1\u05e4\u05d9\u05d0\u05e8",
+        "author_id": 733941175462920192,
+        "timestamp": "2025-05-05 07:13:23",
+        "upvotes": 5,
+        "downvotes": 0,
+        "status": "pending"
+    }
+]
