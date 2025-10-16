@@ -886,6 +886,24 @@ class CloseModal(discord.ui.Modal):
             m = await channel.send(file=discord.File(f"./tickets/{interaction.channel.id}.txt"))
             logembed.add_field(name="Direct Transcripit"
                                , value=f"[Click Here]({m.jump_url})")
+        # --- PC Checker Timer Claim Logic ---
+        try:
+            timer_data = self.bot.db.execute("SELECT set_by, end_time FROM pc_check_timers WHERE channel_id = ?", (interaction.channel.id,)).fetchone()
+            if timer_data:
+                setter_id, end_time_stamp = timer_data
+                if datetime.datetime.now().timestamp() >= end_time_stamp:
+                    setter_member = interaction.guild.get_member(setter_id)
+                    if setter_member:
+                        now = utils.now()
+                        date = f"{now.day}/{now.month}/{now.year}"
+                        self.bot.db.execute("INSERT INTO pc_claims VALUES (?, ?, ?, ?)",
+                                            (interaction.channel.id, setter_id, date, str(now.timestamp())))
+                        self.bot.db.execute("DELETE FROM pc_check_timers WHERE channel_id = ?", (interaction.channel.id,))
+                        self.bot.database.commit()
+        except Exception as e:
+            print(f"Error during PC checker claim processing: {e}")
+        # --- End of PC Checker Logic ---
+
         logchannel = interaction.guild.get_channel(data['logs']['ticket']['close'])
         await logchannel.send(embed=logembed)
         await interaction.channel.delete(reason="טיקט נסגר")        
@@ -1058,6 +1076,148 @@ class CloseSelect(discord.ui.View):
 
     
     
+class PCCheckerTimerModal(discord.ui.Modal, title="הצב זמן מענה"):
+    def __init__(self, bot):
+        super().__init__(timeout=None)
+        self.bot = bot
+
+    minutes = discord.ui.TextInput(
+        label="כמה דקות להמתין?",
+        placeholder="הזן מספר דקות (למשל, 60)",
+        required=True,
+        style=discord.TextStyle.short
+    )
+
+    async def on_submit(self, interaction: discord.Interaction):
+        try:
+            minutes_to_wait = int(self.minutes.value)
+            if minutes_to_wait <= 0:
+                await interaction.response.send_message("אנא הזן מספר דקות חיובי.", ephemeral=True)
+                return
+        except ValueError:
+            await interaction.response.send_message("ערך לא תקין. אנא הזן מספר דקות.", ephemeral=True)
+            return
+
+        end_time = datetime.datetime.now() + timedelta(minutes=minutes_to_wait)
+
+        self.bot.db.execute(
+            "INSERT OR REPLACE INTO pc_check_timers (channel_id, set_by, end_time) VALUES (?, ?, ?)",
+            (interaction.channel.id, interaction.user.id, end_time.timestamp())
+        )
+        self.bot.database.commit()
+
+        embed = discord.Embed(
+            title="⏰ הוגדר זמן מענה",
+            description=f"זמן מענה הוגדר על ידי {interaction.user.mention}.\nהטיימר יסתיים ב: {discord.utils.format_dt(end_time, style='F')}",
+            color=discord.Color.blue()
+        )
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
+class PCCheckerActions(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__(timeout=None)
+        self.bot = bot
+
+    @discord.ui.button(label="הוסף משתמש", emoji="➕", style=discord.ButtonStyle.secondary, custom_id="pc_add_user")
+    async def add_user(self, inter: discord.Interaction, button: discord.ui.Button):
+        await inter.response.defer(thinking=True, ephemeral=True)
+        embed = discord.Embed(timestamp=utils.now(),
+                              description="שלח כאן את המשתמש שברצונך להוסיף לטיקט")
+        embed.set_author(name=inter.guild.name)
+        embed.set_footer(text=inter.guild.name, icon_url=data['ui']['thumbnail'])
+        await inter.followup.send(embed=embed, ephemeral=True)
+        try:
+            resp: discord.Message = await self.bot.wait_for("message",
+                                                            check=lambda r: r.author.id == inter.user.id and r.channel.id == inter.channel.id,
+                                                            timeout=30)
+        except asyncio.TimeoutError:
+            failembed = discord.Embed(timestamp=utils.now(),
+                                      description="הוספת המשתמש נכשלה, הזמן אזל!",
+                                      color=discord.Color.from_rgb(220, 53, 69))
+            return await inter.followup.send(embed=failembed, ephemeral=True)
+        user = None
+        try:
+            user_id = int(resp.content)
+            user = inter.guild.get_member(user_id)
+        except: pass
+        if resp.mentions:
+            user = resp.mentions[0]
+        if not user:
+            return await inter.followup.send('משתמש לא תקין', ephemeral=True)
+
+        await inter.channel.set_permissions(user, view_channel=True, send_messages=True)
+        embed = discord.Embed(timestamp=utils.now(),
+                              color=discord.Color.from_rgb(0, 123, 255),
+                              description=f"המשתמש {user.mention} נוסף בהצלחה לטיקט על ידי - {inter.user.mention}")
+        await inter.channel.send(embed=embed)
+
+
+    @discord.ui.button(label="הסר משתמש", emoji="➖", style=discord.ButtonStyle.secondary, custom_id="pc_remove_user")
+    async def remove_user(self, inter: discord.Interaction, button: discord.ui.Button):
+        await inter.response.defer(thinking=True, ephemeral=True)
+        embed = discord.Embed(timestamp=utils.now(),
+                              description="שלח כאן את המשתמש שברצונך להסיר מהטיקט")
+        await inter.followup.send(embed=embed, ephemeral=True)
+        try:
+            resp: discord.Message = await self.bot.wait_for("message",
+                                                            check=lambda r: r.author.id == inter.user.id and r.channel.id == inter.channel.id,
+                                                            timeout=30)
+        except asyncio.TimeoutError:
+            failembed = discord.Embed(timestamp=utils.now(),
+                                      description="הסרת המשתמש נכשלה, הזמן אזל!",
+                                      color=discord.Color.from_rgb(220, 53, 69))
+            return await inter.followup.send(embed=failembed, ephemeral=True)
+        user = None
+        try:
+            user_id = int(resp.content)
+            user = inter.guild.get_member(user_id)
+        except: pass
+        if resp.mentions:
+            user = resp.mentions[0]
+        if not user:
+            return await inter.followup.send('משתמש לא תקין', ephemeral=True)
+
+        await inter.channel.set_permissions(user, view_channel=False)
+        embed = discord.Embed(timestamp=utils.now(),
+                              color=discord.Color.dark_orange(),
+                              description=f"המשתמש {user.mention} הוסר בהצלחה מהטיקט על ידי - {inter.user.mention}")
+        await inter.channel.send(embed=embed)
+
+    @discord.ui.button(label="הצב זמן מענה", emoji="⏰", style=discord.ButtonStyle.primary, custom_id="pc_set_timer")
+    async def set_timer(self, interaction: discord.Interaction, button: discord.ui.Button):
+        pc_checker_role_id = 1125003229659406366
+        if not any(role.id == pc_checker_role_id for role in interaction.user.roles):
+            return await interaction.response.send_message("אין לך הרשאה להשתמש בכפתור זה.", ephemeral=True)
+
+        await interaction.response.send_modal(PCCheckerTimerModal(self.bot))
+
+
+    @discord.ui.button(label="קח קליים", emoji="✔️", style=discord.ButtonStyle.success, custom_id="pc_take_claim")
+    async def take_claim(self, interaction: discord.Interaction, button: discord.ui.Button):
+        pc_checker_role_id = 1125003229659406366
+        if not any(role.id == pc_checker_role_id for role in interaction.user.roles):
+            return await interaction.response.send_message("אין לך הרשאה להשתמש בכפתור זה.", ephemeral=True)
+
+        now = utils.now()
+        date = f"{now.day}/{now.month}/{now.year}"
+
+        self.bot.db.execute("INSERT INTO pc_claims VALUES (?, ?, ?, ?)",
+                            (interaction.channel.id, interaction.user.id, date, str(now.timestamp())))
+        self.bot.database.commit()
+
+        button.disabled = True
+        button.label = f"קליים נלקח על ידי {interaction.user.name}"
+        await interaction.response.edit_message(view=self)
+
+        embed = discord.Embed(
+            title="✅ קליים נלקח",
+            description=f"קליים של PC CHECKER נלקח על ידי {interaction.user.mention}.",
+            color=discord.Color.green()
+        )
+        await interaction.channel.send(embed=embed)
+
+
 class StaffActions(discord.ui.View):
     def __init__(self, bot, utils=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -1186,6 +1346,51 @@ class StaffActions(discord.ui.View):
                        , custom_id="response_timer_button")
     async def set_response_timer(self, inter: discord.Interaction, button: discord.ui.Button):
         await inter.response.send_modal(ResponseTimerModal(self.bot))
+
+    @discord.ui.button(label="מעבר ל PC CHECKERS", emoji="💻", style=discord.ButtonStyle.danger, custom_id="move_to_pc_checkers")
+    async def move_to_pc_checkers(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Role IDs
+        staff_role_id = 1128143033431511081
+        pc_checker_role_id = 1125003229659406366
+
+        # Permission Check
+        if not any(role.id == staff_role_id for role in interaction.user.roles):
+            return await interaction.response.send_message("אין לך הרשאה לבצע פעולה זו.", ephemeral=True)
+
+        await interaction.response.defer(ephemeral=True)
+
+        # 1. Grant claim to the user
+        now = utils.now()
+        date = f"{now.day}/{now.month}/{now.year}"
+        self.bot.db.execute("INSERT INTO claims VALUES (?, ?, ?, ?)",
+                            (interaction.channel.id, interaction.user.id, date, str(now.timestamp())))
+        self.bot.database.commit()
+
+        # 2. Move ticket to the new category
+        pc_category_id = 1428406834783322195
+        category = interaction.guild.get_channel(pc_category_id)
+        if category and isinstance(category, discord.CategoryChannel):
+            await interaction.channel.edit(category=category)
+
+        # 3. Remove permissions from the regular staff role
+        staff_role = interaction.guild.get_role(staff_role_id)
+        if staff_role:
+            await interaction.channel.set_permissions(staff_role, view_channel=False)
+
+        # 4. Send the new message with the PC Checker view
+        pc_checker_role = interaction.guild.get_role(pc_checker_role_id)
+        ticket_opener = interaction.guild.get_member(int(interaction.channel.topic))
+
+        message_content = f"{pc_checker_role.mention}, {ticket_opener.mention}, מבקש בדיקת מחשב. לטיפולכם :)"
+
+        embed = discord.Embed(
+            title="אפשרויות PC CHECKERS",
+            description="אנא השתמשו בכפתורים למטה לניהול הבדיקה.",
+            color=discord.Color.red()
+        )
+
+        await interaction.channel.send(message_content, embed=embed, view=PCCheckerActions(self.bot))
+        await interaction.followup.send("הטיקט הועבר בהצלחה ל-PC Checkers.", ephemeral=True)
     
 
     @discord.ui.button(label="הוסף רול", 
@@ -1859,6 +2064,119 @@ class TicketSystem(commands.Cog):
                 super().__init__(timeout=None)              
                 self.add_item(TodayOrAlways(bot))
         await ctx.send(view=TheView(self.bot))
+
+    @commands.has_role(1125003229659406366) # PC Checker Role
+    @commands.command()
+    async def pcclaims(self, ctx: commands.Context):
+        class TodayOrAlways(discord.ui.Select):
+            def __init__(self, bot):
+                self.bot = bot
+                options: list[discord.SelectOption] = [
+                    discord.SelectOption(
+                        label="Always",
+                        description="All the PC claims"
+                    ),
+
+                    discord.SelectOption(
+                        label="Today",
+                        description="All the PC claims today"
+                    )
+                ]
+                super().__init__(custom_id="pc_toppic",
+                                 placeholder="Select option",
+                                 min_values=1,
+                                 max_values=1,
+                                 options=options)
+            async def callback(self, interaction: discord.Interaction):
+                def chunk_data(data_list, chunk_size=25):
+                    for i in range(0, len(data_list), chunk_size):
+                        yield data_list[i:i + chunk_size]
+
+                if self.values[0] == "Today":
+                    now = utils.now()
+                    date = f"{now.day}/{now.month}/{now.year}"
+                    today = self.bot.db.execute(f"SELECT userid FROM pc_claims WHERE date = '{date}'").fetchall()
+                    today = [x[0] for x in today]
+                    counter = Counter(today)
+                    sorted_list = [(item, today.count(item)) for item in set(today)]
+                    sorted_list.sort(key=lambda x: x[1], reverse=True)
+                    todaylen = len(today)
+
+                    chunks = list(chunk_data(sorted_list))
+                    if not chunks:
+                        embed = discord.Embed(
+                            timestamp=utils.now(),
+                            title="PC Checker Claims",
+                            description=f"Today Claims - `{todaylen}`\nNo claims found.",
+                            color=discord.Color.from_rgb(40, 167, 69)
+                        )
+                        return await interaction.response.send_message(embed=embed)
+
+                    first_embed = discord.Embed(
+                        timestamp=utils.now(),
+                        title="PC Checker Claims",
+                        description=f"Today Claims - `{todaylen}`",
+                        color=discord.Color.from_rgb(40, 167, 69)
+                    )
+                    for userid, count in chunks[0]:
+                        first_embed.add_field(name=f"{count} Claims", value=f"<@{userid}>", inline=True)
+                    await interaction.response.send_message(embed=first_embed)
+
+                    for i, chunk in enumerate(chunks[1:], 1):
+                        embed = discord.Embed(
+                            timestamp=utils.now(),
+                            title=f"PC Checker Claims (Page {i+1})",
+                            description=f"Today Claims - `{todaylen}`",
+                            color=discord.Color.from_rgb(40, 167, 69)
+                        )
+                        for userid, count in chunk:
+                            embed.add_field(name=f"{count} Claims", value=f"<@{userid}>", inline=True)
+                        await interaction.channel.send(embed=embed)
+
+                else:
+                    always = self.bot.db.execute(f"SELECT userid FROM pc_claims").fetchall()
+                    always = [x[0] for x in always]
+                    counter = Counter(always)
+                    sorted_list = [(item, counter[item]) for item in counter]
+                    sorted_list.sort(key=lambda x: x[1], reverse=True)
+                    alwayslen = len(always)
+
+                    chunks = list(chunk_data(sorted_list))
+                    if not chunks:
+                        embed = discord.Embed(
+                            timestamp=utils.now(),
+                            title="PC Checker Claims",
+                            description=f"Always Claims - `{alwayslen}`\nNo claims found.",
+                            color=discord.Color.from_rgb(40, 167, 69)
+                        )
+                        return await interaction.response.send_message(embed=embed)
+
+                    first_embed = discord.Embed(
+                        timestamp=utils.now(),
+                        title="PC Checker Claims",
+                        description=f"Always Claims - `{alwayslen}`",
+                        color=discord.Color.from_rgb(40, 167, 69)
+                    )
+                    for userid, count in chunks[0]:
+                        first_embed.add_field(name=f"{count} Claims", value=f"<@{userid}>", inline=True)
+                    await interaction.response.send_message(embed=first_embed)
+
+                    for i, chunk in enumerate(chunks[1:], 1):
+                        embed = discord.Embed(
+                            timestamp=utils.now(),
+                            title=f"PC Checker Claims (Page {i+1})",
+                            description=f"Always Claims - `{alwayslen}`",
+                            color=discord.Color.from_rgb(40, 167, 69)
+                        )
+                        for userid, count in chunk:
+                            embed.add_field(name=f"{count} Claims", value=f"<@{userid}>", inline=True)
+                        await interaction.channel.send(embed=embed)
+
+        class TheView(discord.ui.View):
+            def __init__(self, bot):
+                super().__init__(timeout=None)
+                self.add_item(TodayOrAlways(bot))
+        await ctx.send(view=TheView(self.bot))
         
     
     @commands.Cog.listener('on_ready')
@@ -1868,6 +2186,9 @@ class TicketSystem(commands.Cog):
         self.bot.db.execute("CREATE TABLE IF NOT EXISTS claims (channelid BIGINT, userid BIGINT, date TEXT, correct TEXT)")
         self.bot.db.execute("CREATE TABLE IF NOT EXISTS claim (channelid BIGINT, userid BIGINT)")
         self.bot.db.execute("CREATE TABLE IF NOT EXISTS ticketsmessage (channelid BIGINT, userid BIGINT, messagecount INT)")
+        # --- New tables for PC Checker feature ---
+        self.bot.db.execute("CREATE TABLE IF NOT EXISTS pc_claims (channelid BIGINT, userid BIGINT, date TEXT, correct TEXT)")
+        self.bot.db.execute("CREATE TABLE IF NOT EXISTS pc_check_timers (channel_id INTEGER PRIMARY KEY, set_by INTEGER, end_time REAL)")
         self.bot.database.commit()
         self.utils = utils.Options(self.bot)
         guild = self.bot.get_guild(self.bot.guilds[0].id)
