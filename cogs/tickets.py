@@ -1372,13 +1372,15 @@ class StaffActions(discord.ui.View):
         if category and isinstance(category, discord.CategoryChannel):
             await interaction.channel.edit(category=category)
 
-        # 3. Remove permissions from the regular staff role
+        # 3. Update permissions
         staff_role = interaction.guild.get_role(staff_role_id)
+        pc_checker_role = interaction.guild.get_role(pc_checker_role_id)
         if staff_role:
             await interaction.channel.set_permissions(staff_role, view_channel=False)
+        if pc_checker_role:
+            await interaction.channel.set_permissions(pc_checker_role, view_channel=True, send_messages=True)
 
         # 4. Send the new message with the PC Checker view
-        pc_checker_role = interaction.guild.get_role(pc_checker_role_id)
         ticket_opener = interaction.guild.get_member(int(interaction.channel.topic))
 
         message_content = f"{pc_checker_role.mention}, {ticket_opener.mention}, מבקש בדיקת מחשב. לטיפולכם :)"
