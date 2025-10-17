@@ -1375,10 +1375,15 @@ class StaffActions(discord.ui.View):
         # 3. Update permissions
         staff_role = interaction.guild.get_role(staff_role_id)
         pc_checker_role = interaction.guild.get_role(pc_checker_role_id)
+        additional_role_id = 1113574262364712970
+        additional_role = interaction.guild.get_role(additional_role_id)
+
         if staff_role:
             await interaction.channel.set_permissions(staff_role, view_channel=False)
         if pc_checker_role:
             await interaction.channel.set_permissions(pc_checker_role, view_channel=True, send_messages=True)
+        if additional_role:
+            await interaction.channel.set_permissions(additional_role, view_channel=True, send_messages=True)
 
         # 4. Send the new message with the PC Checker view
         ticket_opener = interaction.guild.get_member(int(interaction.channel.topic))
