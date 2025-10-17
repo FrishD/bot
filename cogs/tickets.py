@@ -1199,11 +1199,17 @@ class PCCheckerActions(discord.ui.View):
         if not any(role.id == pc_checker_role_id for role in interaction.user.roles):
             return await interaction.response.send_message("אין לך הרשאה להשתמש בכפתור זה.", ephemeral=True)
 
+        # Check if a claim has already been taken for this ticket
+        existing_claim = self.bot.db.execute("SELECT 1 FROM pc_taken_claims WHERE channel_id = ?", (interaction.channel.id,)).fetchone()
+        if existing_claim:
+            return await interaction.response.send_message("כבר נלקח קליים בטיקט זה.", ephemeral=True)
+
         now = utils.now()
         date = f"{now.day}/{now.month}/{now.year}"
 
         self.bot.db.execute("INSERT INTO pc_claims VALUES (?, ?, ?, ?)",
                             (interaction.channel.id, interaction.user.id, date, str(now.timestamp())))
+        self.bot.db.execute("INSERT INTO pc_taken_claims (channel_id, user_id) VALUES (?, ?)", (interaction.channel.id, interaction.user.id))
         self.bot.database.commit()
 
         button.disabled = True
@@ -1216,6 +1222,14 @@ class PCCheckerActions(discord.ui.View):
             color=discord.Color.green()
         )
         await interaction.channel.send(embed=embed)
+
+    @discord.ui.button(label="סגור טיקט", emoji="🔒", style=discord.ButtonStyle.danger, custom_id="pc_close_ticket")
+    async def close_ticket(self, inter: discord.Interaction, button: discord.ui.Button):
+        pc_checker_role_id = 1125003229659406366
+        if not any(role.id == pc_checker_role_id for role in inter.user.roles):
+            return await inter.response.send_message("אין לך הרשאה להשתמש בכפתור זה.", ephemeral=True)
+
+        await inter.response.send_message(view=CloseSelect(self.bot), ephemeral=True)
 
 
 class StaffActions(discord.ui.View):
@@ -1369,26 +1383,34 @@ class StaffActions(discord.ui.View):
         # 2. Move ticket to the new category
         pc_category_id = 1428406834783322195
         category = interaction.guild.get_channel(pc_category_id)
-        if category and isinstance(category, discord.CategoryChannel):
-            await interaction.channel.edit(category=category)
+        if not category or not isinstance(category, discord.CategoryChannel):
+            return await interaction.followup.send("שגיאה: קטגוריית PC Checkers לא נמצאה.", ephemeral=True)
+
+        await interaction.channel.edit(category=category)
 
         # 3. Update permissions
+        overwrites = interaction.channel.overwrites
         staff_role = interaction.guild.get_role(staff_role_id)
         pc_checker_role = interaction.guild.get_role(pc_checker_role_id)
         additional_role_id = 1113574262364712970
         additional_role = interaction.guild.get_role(additional_role_id)
 
         if staff_role:
-            await interaction.channel.set_permissions(staff_role, view_channel=False)
+            overwrites[staff_role] = discord.PermissionOverwrite(view_channel=False)
         if pc_checker_role:
-            await interaction.channel.set_permissions(pc_checker_role, view_channel=True, send_messages=True)
+            overwrites[pc_checker_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
         if additional_role:
-            await interaction.channel.set_permissions(additional_role, view_channel=True, send_messages=True)
+            overwrites[additional_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+
+        await interaction.channel.edit(overwrites=overwrites)
 
         # 4. Send the new message with the PC Checker view
         ticket_opener = interaction.guild.get_member(int(interaction.channel.topic))
 
-        message_content = f"{pc_checker_role.mention}, {ticket_opener.mention}, מבקש בדיקת מחשב. לטיפולכם :)"
+        if not pc_checker_role:
+            return await interaction.followup.send("שגיאה: רול PC Checkers לא נמצא.", ephemeral=True)
+
+        message_content = f"{pc_checker_role.mention}, {ticket_opener.mention if ticket_opener else ''}, מבקש בדיקת מחשב. לטיפולכם :)"
 
         embed = discord.Embed(
             title="אפשרויות PC CHECKERS",
@@ -2144,8 +2166,7 @@ class TicketSystem(commands.Cog):
                     always = self.bot.db.execute(f"SELECT userid FROM pc_claims").fetchall()
                     always = [x[0] for x in always]
                     counter = Counter(always)
-                    sorted_list = [(item, counter[item]) for item in counter]
-                    sorted_list.sort(key=lambda x: x[1], reverse=True)
+                    sorted_list = counter.most_common()
                     alwayslen = len(always)
 
                     chunks = list(chunk_data(sorted_list))
@@ -2196,6 +2217,7 @@ class TicketSystem(commands.Cog):
         # --- New tables for PC Checker feature ---
         self.bot.db.execute("CREATE TABLE IF NOT EXISTS pc_claims (channelid BIGINT, userid BIGINT, date TEXT, correct TEXT)")
         self.bot.db.execute("CREATE TABLE IF NOT EXISTS pc_check_timers (channel_id INTEGER PRIMARY KEY, set_by INTEGER, end_time REAL)")
+        self.bot.db.execute("CREATE TABLE IF NOT EXISTS pc_taken_claims (channel_id INTEGER PRIMARY KEY, user_id INTEGER)")
         self.bot.database.commit()
         self.utils = utils.Options(self.bot)
         guild = self.bot.get_guild(self.bot.guilds[0].id)
